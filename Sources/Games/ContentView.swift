@@ -8,7 +8,77 @@
 import TokamakDOM
 
 struct ContentView: View {
+    @StateObject private var coordinator = RootCoordinator()
+    @StateObject private var hashState = HashState()
+    
+    private var screenState: CoordinatorState {
+        switch coordinator.state.modal {
+        case .overlay:
+            return coordinator.previousState ?? coordinator.state
+        case .none:
+            return coordinator.state
+        }
+    }
+    
+    private var overlayState: CoordinatorState? {
+        switch coordinator.state.modal {
+        case .overlay:
+            return coordinator.state
+        case .none:
+            return nil
+        }
+    }
+    
+    private var background: some View {
+        Color.green
+    }
+    
+    private var screen: some View {
+        view(for: screenState.action, type: screenState.modal, with: screenState.data)
+    }
+    
     var body: some View {
+        ZStack {
+            background.zIndex(1)
+            screen.zIndex(2)
+            overlay.zIndex(3)
+        }
+    }
+    
+    private var overlay: some View {
+        let action: CoordinatorAction! = overlayState?.action
+        let type: ModalType = overlayState?.modal ?? .none
+        let data: Any? = overlayState?.data
+        return ZStack {
+            if action != nil {
+                Color(.sRGB, red: 1, green: 1, blue: 1, opacity: 0.4)
+                view(for: action, type: type, with: data)
+            }
+        }
+    }
+    
+    private func view(for action: CoordinatorAction, type: ModalType, with info: Any?) -> some View {
+        switch action {
+        case let .goTo(path):
+            return view(for: path, type: type, with: info)
+        default:
+            return view(for: "", type: type, with: info)
+        }
+    }
+    
+    private func view(for path: String, type: ModalType, with info: Any?) -> some View {
+        ZStack {
+            if path == "" {
+                Text("root")
+            } else if path == "privacy policy" {
+                projectList
+            } else {
+                Text("404 Page not found")
+            }
+        }
+    }
+    
+    var projectList: some View {
         ProjectListView(
             projects :
                 [
