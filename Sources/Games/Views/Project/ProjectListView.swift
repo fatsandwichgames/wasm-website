@@ -19,22 +19,22 @@ struct ProjectListView: View {
      
     var body: some View {
         VStack {
-            HStack {
-                ScrollView(.vertical) {
-                    LazyVGrid(columns: columns, alignment: .center) {
-                        ForEach(projects) { project in
-                            TapGesture(action: {
-                                coordinator.performAction(.goTo("game/\(project.id)"))
-                            }) {
-                                ProjectView(project: project)
-                            }
+            HStack(alignment: .top) {
+                LazyVGrid(columns: columns, alignment: .center) {
+                    ForEach(projects) { project in
+                        TapGesture(action: {
+                            coordinator.performAction(.goTo("game/\(project.id)"))
+                        }) {
+                            ProjectView(project: project)
                         }
                     }
                 }
-                Spacer(minLength: 0)
-                if activeProjectId != nil {
-                    ProjectDetailsView(project: projects.first(where: { $0.id == activeProjectId })!)
-                }
+                Spacer(minLength: 40)
+                VStack {
+                    if activeProjectId != nil {
+                        ProjectDetailsView(project: projects.first(where: { $0.id == activeProjectId })!)
+                    }
+                }.frame(width: 600)
             }
             Spacer(minLength: 0)
         }

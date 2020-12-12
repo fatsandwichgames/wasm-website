@@ -97,11 +97,25 @@ struct ContentView: View {
                 [
                     Project(id: "id1510216500",
                             name: "Little Wars",
+                            description: """
+                        Play online with a friend or random 2-5 players as you attempt to hold your ground.
+
+                        BATTLE. WIN. BATTLE.
+
+                        It’s simple! The more you battle and win, the higher you jump up the leaderboard and the more coins you earn! Grow your strength, unlock armour, weapons, hair and many more! Be the top warrior with the best, customised character.
+
+                        Are you ready for Little Wars with Bigger Battles?
+                        """,
                             appStoreUrl: "https://apps.apple.com/app/little-wars-with-big-battles/id1510216500",
                             thumbnailUrl: "https://is2-ssl.mzstatic.com/image/thumb/Purple124/v4/30/83/51/30835110-a35c-d93c-4aeb-38a402328fa5/AppIcon-1x_U007emarketing-0-7-0-sRGB-85-220.png/540x540bb.jpg",
-                            youtube: "https://www.youtube.com/embed/zB6TeBg0t2Q"),
+                            youtube: "https://www.youtube.com/embed/zB6TeBg0t2Q",
+                            facebook: "www.text.com",
+                            instagram: "www.text.com",
+                            twitter: "www.text.com"
+                    ),
                     Project(id: "id1542765652",
                             name: "Ho Ho Go",
+                            description: "none",
                             appStoreUrl: "https://apps.apple.com/app/ho-ho-go/id1542765652",
                             thumbnailUrl: "https://is3-ssl.mzstatic.com/image/thumb/Purple114/v4/78/9b/be/789bbefa-d3eb-a877-cea2-68f7be26601d/AppIcon-1x_U007emarketing-0-7-0-sRGB-85-220.png/540x540bb.jpg"),
                 ],
