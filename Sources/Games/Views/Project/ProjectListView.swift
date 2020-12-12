@@ -8,15 +8,10 @@
 import TokamakDOM
 
 struct ProjectListView: View {
-    @StateObject private var hashState = HashState()
-    var projects: [Project]
+    @EnvironmentObject private var coordinator: RootCoordinator
     
-    var activeProjectId: String? {
-        guard let slice = location?.description.split(separator: "#").last else {
-            return nil
-        }
-        return String(slice)
-    }
+    let projects: [Project]
+    let activeProjectId: String?
     
     let columns = [
         GridItem(.fixed(200)),
@@ -29,17 +24,17 @@ struct ProjectListView: View {
                     LazyVGrid(columns: columns, alignment: .center) {
                         ForEach(projects) { project in
                             TapGesture(action: {
-                                location?.hash = .string("\(project.id)")
+                                coordinator.performAction(.goTo("game/\(project.id)"))
                             }) {
                                 ProjectView(project: project)
                             }
                         }
                     }
                 }
+                Spacer(minLength: 0)
                 if activeProjectId != nil {
                     ProjectDetailsView(project: projects.first(where: { $0.id == activeProjectId })!)
                 }
-                Spacer(minLength: 0)
             }
             Spacer(minLength: 0)
         }

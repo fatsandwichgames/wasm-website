@@ -12,11 +12,11 @@ struct ProjectDetailsView: View {
     
     var body: some View {
         VStack(alignment: .trailing) {
+            AppStoreDownload(project: project)
+            Spacer().frame(height: 22)
             if let url = project.youtube {
                 YouTube(url: url)
             }
-            Spacer().frame(height: 22)
-            AppStoreDownload(project: project)
         }
     }
 }

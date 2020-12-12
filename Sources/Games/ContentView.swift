@@ -30,7 +30,7 @@ struct ContentView: View {
     }
     
     private var background: some View {
-        Color.green
+        Color.clear
     }
     
     private var screen: some View {
@@ -43,6 +43,8 @@ struct ContentView: View {
             screen.zIndex(2)
             overlay.zIndex(3)
         }
+        .environmentObject(hashState)
+        .environmentObject(coordinator)
     }
     
     private var overlay: some View {
@@ -67,18 +69,29 @@ struct ContentView: View {
     }
     
     private func view(for path: String, type: ModalType, with info: Any?) -> some View {
-        ZStack {
+        return ZStack {
             if path == "" {
-                Text("root")
-            } else if path == "privacy policy" {
-                projectList
+                projectList(selected: "id1510216500")
+            } else if let subRoute = subRoute(with: "game/*", for: path) {
+                projectList(selected: subRoute)
+            } else if let subRoute = subRoute(with: "privacy-policy/*", for: path) {
+                Text("Privacy Policy \(subRoute)")
+            } else if let subRoute = subRoute(with: "terms-of-use/*", for: path) {
+                Text("Terms Of Use \(subRoute)")
             } else {
                 Text("404 Page not found")
             }
         }
     }
     
-    var projectList: some View {
+    private func subRoute(with route: String, for path: String) -> String? {
+        guard let range = path.range(of: route, options: [.regularExpression]) else {
+            return nil
+        }
+        return String(path[range.upperBound..<path.endIndex])
+    }
+    
+    func projectList(selected: String? = nil) -> some View {
         ProjectListView(
             projects :
                 [
@@ -91,7 +104,8 @@ struct ContentView: View {
                             name: "Ho Ho Go",
                             appStoreUrl: "https://apps.apple.com/app/ho-ho-go/id1542765652",
                             thumbnailUrl: "https://is3-ssl.mzstatic.com/image/thumb/Purple114/v4/78/9b/be/789bbefa-d3eb-a877-cea2-68f7be26601d/AppIcon-1x_U007emarketing-0-7-0-sRGB-85-220.png/540x540bb.jpg"),
-                ]
+                ],
+            activeProjectId: selected
         )
     }
 }

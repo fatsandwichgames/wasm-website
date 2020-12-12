@@ -9,7 +9,16 @@ import Foundation
 import TokamakDOM
 
 class RootCoordinator: ObservableObject, Coordinator {
-    @Published var state: CoordinatorState = (.goTo(route), .none, nil)
+    @Published var state: CoordinatorState = (.goTo(route), .none, nil) {
+        didSet {
+            switch state.action {
+            case let .goTo(path):
+                location?.hash = .string(path)
+            default:
+                location?.hash = .string("")
+            }
+        }
+    }
     
     var stateStack: [CoordinatorState] = []
     
