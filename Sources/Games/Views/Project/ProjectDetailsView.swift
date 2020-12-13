@@ -6,51 +6,82 @@
 //
 
 import TokamakDOM
-import JavaScriptKit
 
 struct ProjectDetailsView: View {
+    @EnvironmentObject private var coordinator: RootCoordinator
+    
     let project: Project
+    
+    var hasTwitter: Bool {
+        project.twitter != nil
+    }
+    
+    var hasFacebook: Bool {
+        project.facebook != nil
+    }
+    
+    var hasInstagram: Bool {
+        project.instagram != nil
+    }
     
     var body: some View {
         VStack(alignment: .trailing) {
-            Text(project.name)
-                .font(.title)
+            HStack {
+                Text(project.name)
+                    .font(.title)
+                Spacer()
+                privacyPolicy(name: project.name)
+                termsOfUse(name: project.name)
+            }.frame(minHeight: 100)
             Spacer().frame(height: 40)
             MultilineText(project.description)
                 .frame(maxWidth: 500)
             Spacer().frame(height: 22)
             HStack {
-                /*
-                 <a href="https://icons8.com/icon/107615/twitter-squared">Twitter Squared icon by Icons8</a>
-                 */
-                if let url = project.twitter {
-                    Button(action: {
-                        _ = JSObject.global.window.open("\(url)");
-                    }) { WebImage("https://img.icons8.com/ios/50/000000/twitter-squared.png") }
-                }
-                /*
-                 <a href="https://icons8.com/icon/435/facebook">Facebook icon by Icons8</a>
-                 */
-                if let url = project.facebook {
-                    Button(action: {
-                        _ = JSObject.global.window.open("\(url)");
-                    }) { WebImage("https://img.icons8.com/ios/50/000000/facebook--v1.png") }
-                }
-                /*
-                 <a href="https://icons8.com/icon/32292/instagram">Instagram icon by Icons8</a>
-                 */
-                if let url = project.instagram {
-                    Button(action: {
-                        _ = JSObject.global.window.open("\(url)");
-                    }) { WebImage("https://img.icons8.com/ios/50/000000/instagram-new--v1.png") }
-                }
-                Spacer(minLength: 0)
                 AppStoreDownload(project: project)
+                Spacer(minLength: 0)
+                if hasTwitter {
+                    SocialMediaButton(link: project.twitter ?? "", type: .twitter)
+                }
+                if hasFacebook {
+                    SocialMediaButton(link: project.facebook ?? "", type: .facebook)
+                }
+                if hasInstagram {
+                    SocialMediaButton(link: project.instagram ?? "", type: .instagram)
+                }
             }.padding(.leading, 40)
             Spacer().frame(height: 22)
             if let url = project.youtube {
                 YouTube(url: url)
             }
         }
+    }
+    
+    private func privacyPolicy(name: String) -> some View {
+        /*
+         <a href="https://icons8.com/icon/123365/terms-and-conditions">Terms and Conditions icon by Icons8</a>
+         */
+        TapGesture(action: {
+            coordinator.performAction(.goTo("privacy-policy/\(name)"))
+        }) {
+            WebImage("https://img.icons8.com/ios/50/000000/terms-and-conditions.png")
+                .background(Color.white)
+                .cornerRadius(8)
+        }
+        .padding()
+    }
+    
+    private func termsOfUse(name: String) -> some View {
+        /*
+         <a href="https://icons8.com/icon/YqMviGkCsvoB/security-shield-green">Security Shield Green icon by Icons8</a>
+         */
+        TapGesture(action: {
+            coordinator.performAction(.goTo("terms-of-use/\(name)"))
+        }) {
+            WebImage("https://img.icons8.com/ios/50/000000/security-shield-green.png")
+                .background(Color.white)
+                .cornerRadius(8)
+        }
+        .padding()
     }
 }

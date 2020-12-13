@@ -90,7 +90,10 @@ struct ContentView: View {
         }
         return String(path[range.upperBound..<path.endIndex])
     }
-    
+}
+
+// MARK: Route Views
+extension ContentView {
     func projectList(selected: String? = nil) -> some View {
         ProjectListView(
             projects :
@@ -109,15 +112,22 @@ struct ContentView: View {
                             appStoreUrl: "https://apps.apple.com/app/little-wars-with-big-battles/id1510216500",
                             thumbnailUrl: "https://is2-ssl.mzstatic.com/image/thumb/Purple124/v4/30/83/51/30835110-a35c-d93c-4aeb-38a402328fa5/AppIcon-1x_U007emarketing-0-7-0-sRGB-85-220.png/540x540bb.jpg",
                             youtube: "https://www.youtube.com/embed/zB6TeBg0t2Q",
-                            facebook: "www.text.com",
-                            instagram: "www.text.com",
-                            twitter: "www.text.com"
+                            facebook: "https://www.facebook.com/littlewarsapp",
+                            instagram: "https://www.instagram.com/littlewars.app",
+                            twitter: "https://twitter.com/littlewars1"
                     ),
                     Project(id: "id1542765652",
                             name: "Ho Ho Go",
-                            description: "none",
+                            description: """
+                        Help Santa and his friend to deliver this year presents!
+
+                        Merry Christmas! and Happy New Year!
+                        I wish you all the best!
+                        """,
                             appStoreUrl: "https://apps.apple.com/app/ho-ho-go/id1542765652",
-                            thumbnailUrl: "https://is3-ssl.mzstatic.com/image/thumb/Purple114/v4/78/9b/be/789bbefa-d3eb-a877-cea2-68f7be26601d/AppIcon-1x_U007emarketing-0-7-0-sRGB-85-220.png/540x540bb.jpg"),
+                            thumbnailUrl: "https://is3-ssl.mzstatic.com/image/thumb/Purple114/v4/78/9b/be/789bbefa-d3eb-a877-cea2-68f7be26601d/AppIcon-1x_U007emarketing-0-7-0-sRGB-85-220.png/540x540bb.jpg",
+                            instagram: "https://www.instagram.com/fatsandwichgames/"
+                            ),
                 ],
             activeProjectId: selected
         )
