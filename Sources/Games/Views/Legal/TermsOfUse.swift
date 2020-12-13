@@ -8,7 +8,9 @@
 import TokamakDOM
 
 struct TermsOfUse: View {
+    let product: String
+    
     var body: some View {
-        Text("")
+        Text(product)
     }
 }

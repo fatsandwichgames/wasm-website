@@ -75,9 +75,9 @@ struct ContentView: View {
             } else if let subRoute = subRoute(with: "game/*", for: path) {
                 projectList(selected: subRoute)
             } else if let subRoute = subRoute(with: "privacy-policy/*", for: path) {
-                Text("Privacy Policy \(subRoute)")
+                PrivacyPolicy(product: subRoute)
             } else if let subRoute = subRoute(with: "terms-of-use/*", for: path) {
-                Text("Terms Of Use \(subRoute)")
+                TermsOfUse(product: subRoute)
             } else {
                 Text("404 Page not found")
             }
