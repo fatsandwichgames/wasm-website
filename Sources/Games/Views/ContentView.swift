@@ -38,24 +38,14 @@ struct ContentView: View {
     }
     
     var body: some View {
-        /**
          VStack {
              NavigationBar(coordinator: coordinator)
              
              Spacer()
+//            Spacer.background(Color.red)
              
              Footer()
          }
-         */
-        ScrollView(.vertical, showsIndicators: false) {
-            ZStack {
-                background.zIndex(1)
-                screen.zIndex(2)
-                overlay.zIndex(3)
-            }
-        }
-        .environmentObject(hashState)
-        .environmentObject(coordinator)
     }
 
     private var overlay: some View {
