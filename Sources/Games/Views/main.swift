@@ -1,12 +1,9 @@
 import TokamakDOM
 
 struct TokamakApp: App {
-    @StateObject private var hashState = HashState()
-    
     var body: some Scene {
-        WindowGroup("Tokamak App") {
+        WindowGroup("Fat Sandwich Games") {
             ContentView()
-                .environmentObject(hashState)
         }
     }
 }

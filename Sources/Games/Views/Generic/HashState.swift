@@ -11,6 +11,15 @@ import JavaScriptKit
 let location = JSObject.global.location.object
 let window = JSObject.global.window.object
 
+var route: String {
+    guard let slices = location?.description.split(separator: "#"),
+          slices.count > 1, //We are not in the root
+          let slice = slices.last else {
+        return ""
+    }
+    return String(slice)
+}
+
 final class HashState: ObservableObject {
     var onHashChange: JSClosure!
     
