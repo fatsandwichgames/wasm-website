@@ -8,7 +8,7 @@
 import TokamakDOM
 
 struct NavigationBar: View {
-    @EnvironmentObject private var coordinator: RootCoordinator
+    let coordinator: Coordinator
 
     var body: some View {
         HStack {
@@ -20,6 +20,8 @@ struct NavigationBar: View {
                     .border(Color.white, width: 1)
             }
             Spacer()
+                .frame(minWidth: 400)
         }
+        .padding(.top, 12)
     }
 }

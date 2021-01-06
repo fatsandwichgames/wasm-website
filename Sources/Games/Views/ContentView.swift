@@ -38,21 +38,26 @@ struct ContentView: View {
     }
     
     var body: some View {
-        VStack {
-            NavigationBar()
-            ScrollView(.vertical, showsIndicators: false) {
-                ZStack {
-                    background.zIndex(1)
-                    screen.zIndex(2)
-                    overlay.zIndex(3)
-                }
+        /**
+         VStack {
+             NavigationBar(coordinator: coordinator)
+             
+             Spacer()
+             
+             Footer()
+         }
+         */
+        ScrollView(.vertical, showsIndicators: false) {
+            ZStack {
+                background.zIndex(1)
+                screen.zIndex(2)
+                overlay.zIndex(3)
             }
-            Footer()
         }
         .environmentObject(hashState)
         .environmentObject(coordinator)
     }
-    
+
     private var overlay: some View {
         let action: CoordinatorAction! = overlayState?.action
         let type: ModalType = overlayState?.modal ?? .none
@@ -139,3 +144,4 @@ extension ContentView {
         )
     }
 }
+ 

@@ -8,9 +8,8 @@
 import TokamakDOM
 
 struct Footer: View {
-    @EnvironmentObject private var coordinator: RootCoordinator
-
     var body: some View {
         Text("2021 Fat Sandwich Games")
+            .padding(.bottom, 12)
     }
 }
