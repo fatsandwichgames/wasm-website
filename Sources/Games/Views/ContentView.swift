@@ -46,6 +46,7 @@ struct ContentView: View {
                     screen.zIndex(2)
                     overlay.zIndex(3)
                 }
+                Spacer()
                 Footer()
             }
         }
