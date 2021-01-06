@@ -16,7 +16,9 @@ struct PrivacyPolicy: View {
         ScrollView(.vertical, showsIndicators: false) {
             VStack(alignment: .leading) {
                 Group {
-                    Text("Privacy Policy").font(.headline)
+                    Text("Privacy Policy")
+                        .font(.largeTitle)
+                        .padding(.bottom, 24)
                     MultilineText("""
                     Szymon Lorenz built the \(product) app as an Ad Supported app. This SERVICE is provided by \(product) at no cost and is intended for use as it is.
                     This page is used to inform visitors regarding my policies with the collection, use, and disclosure of Personal Information if anyone decided to use my Service.
@@ -84,7 +86,7 @@ struct PrivacyPolicy: View {
                     MultilineText("""
                     I may update our Privacy Policy from time to time. Thus, you are advised to review this page periodically for any changes. I will notify you of any changes by posting the new Privacy Policy on this page.
 
-                    This policy is effective as of 2020-12-01
+                    This policy is effective as of 2021-01-06
                     """)
                 }.padding()
                 Group {
@@ -94,11 +96,6 @@ struct PrivacyPolicy: View {
                     You can do it by visiting one of our social media pages and direct messaging through them.
                     Simply brows application check its social channels.
                     """)
-                    TapGesture(action: {
-                        coordinator.performAction(.goTo(""))
-                    }) {
-                        Text("Brows applications")
-                    }
                 }.padding()
             }.padding()
         }.padding()
