@@ -8,7 +8,7 @@
 import TokamakDOM
 
 struct ProjectListView: View {
-    @EnvironmentObject private var coordinator: RootCoordinator
+    let coordinator: Coordinator
     
     let projects: [Project]
     let activeProjectId: String?
@@ -32,7 +32,7 @@ struct ProjectListView: View {
                 Spacer(minLength: 40)
                 VStack {
                     if activeProjectId != nil {
-                        ProjectDetailsView(project: projects.first(where: { $0.id == activeProjectId })!)
+                        ProjectDetailsView(coordinator: coordinator, project: projects.first(where: { $0.id == activeProjectId })!)
                     }
                 }.frame(width: 600)
             }

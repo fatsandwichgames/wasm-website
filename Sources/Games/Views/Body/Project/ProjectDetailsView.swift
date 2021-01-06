@@ -8,7 +8,7 @@
 import TokamakDOM
 
 struct ProjectDetailsView: View {
-    @EnvironmentObject private var coordinator: RootCoordinator
+    let coordinator: Coordinator
     
     let project: Project
     
@@ -35,11 +35,12 @@ struct ProjectDetailsView: View {
             }.frame(minHeight: 100)
             Spacer().frame(height: 40)
             MultilineText(project.description)
-                .frame(maxWidth: 500)
+//                .frame(minWidth: 500)
+//                .frame(width: 500)
             Spacer().frame(height: 22)
             HStack {
                 AppStoreDownload(project: project)
-                Spacer(minLength: 0)
+                Spacer()
                 if hasTwitter {
                     SocialMediaButton(link: project.twitter ?? "", type: .twitter)
                 }

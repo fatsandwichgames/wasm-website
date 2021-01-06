@@ -38,24 +38,18 @@ struct ContentView: View {
     }
     
     var body: some View {
-        /**
-         VStack {
-             NavigationBar(coordinator: coordinator)
-             
-             Spacer()
-             
-             Footer()
-         }
-         */
         ScrollView(.vertical, showsIndicators: false) {
-            ZStack {
-                background.zIndex(1)
-                screen.zIndex(2)
-                overlay.zIndex(3)
+            VStack {
+                NavigationBar(coordinator: coordinator)
+                ZStack {
+                    background.zIndex(1)
+                    screen.zIndex(2)
+                    overlay.zIndex(3)
+                }
+                Footer()
             }
         }
         .environmentObject(hashState)
-        .environmentObject(coordinator)
     }
 
     private var overlay: some View {
@@ -86,9 +80,9 @@ struct ContentView: View {
             } else if let subRoute = subRoute(with: "game/*", for: path) {
                 projectList(selected: subRoute)
             } else if let subRoute = subRoute(with: "privacy-policy/*", for: path) {
-                PrivacyPolicy(product: subRoute)
+                PrivacyPolicy(coordinator: coordinator, product: subRoute)
             } else if let subRoute = subRoute(with: "terms-of-use/*", for: path) {
-                TermsOfUse(product: subRoute)
+                TermsOfUse(coordinator: coordinator, product: subRoute)
             } else {
                 Text("404 Page not found")
             }
@@ -107,6 +101,7 @@ struct ContentView: View {
 extension ContentView {
     func projectList(selected: String? = nil) -> some View {
         ProjectListView(
+            coordinator: coordinator,
             projects :
                 [
                     Project(id: "id1510216500",
