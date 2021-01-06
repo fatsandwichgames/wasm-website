@@ -23,5 +23,6 @@ struct NavigationBar: View {
                 .frame(minWidth: 400)
         }
         .padding(.top, 12)
+        Rectangle().fill(Color.red).frame(width: 20, height: 20)
     }
 }
