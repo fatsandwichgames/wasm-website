@@ -15,8 +15,9 @@ let package = Package(
             name: "Games",
             dependencies: [
                 .product(name: "TokamakShim", package: "Tokamak")
-            ],
-//            resources: [.copy("logo-header.png")]),
+            ]
+            //,resources: [.copy("logo-header.png")]
+            ),
         .testTarget(
             name: "GamesTests",
             dependencies: ["Games"]),
