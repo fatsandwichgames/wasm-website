@@ -94,7 +94,8 @@ struct ContentView: View {
         guard let range = path.range(of: route, options: [.regularExpression]) else {
             return nil
         }
-        return String(path[range.upperBound..<path.endIndex])
+        let sub = String(path[range.upperBound..<path.endIndex])
+        return sub.removingPercentEncoding ?? sub
     }
 }
 
