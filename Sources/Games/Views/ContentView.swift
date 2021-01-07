@@ -124,6 +124,21 @@ extension ContentView {
                             instagram: "https://www.instagram.com/littlewars.app",
                             twitter: "https://twitter.com/littlewars1"
                     ),
+                    Project(id: "id1547566845",
+                            name: "Bobble Fish",
+                            description: """
+                        Bobble Fish is an iOS mobile game.
+                        The game is a side-scroller where the player controls a fish, attempting to guide character between columns of green underwater pipes without hitting them.
+                        
+                        In case you haven’t had the chance to play it yet, Bobble Fish is a touch-based game highly inspired by Flappy Bird.
+                        That has extremely simple game mechanics and aesthetics.
+                        Its gameplay revolves around a single mechanic of tapping on the screen to keep it in the water and avoid obstacles through openings in them without hitting them.
+                        Passing each pair of obstacles gets you one point.
+                        """,
+                            appStoreUrl: "https://apps.apple.com/app/ho-ho-go/id1547566845",
+                            thumbnailUrl: "https://is3-ssl.mzstatic.com/image/thumb/Purple114/v4/..................../AppIcon-1x_U007emarketing-0-7-0-sRGB-85-220.png/540x540bb.jpg",
+                            instagram: "https://www.instagram.com/fatsandwichgames/"
+                    ),
                     Project(id: "id1542765652",
                             name: "Ho Ho Go",
                             description: """
@@ -135,7 +150,7 @@ extension ContentView {
                             appStoreUrl: "https://apps.apple.com/app/ho-ho-go/id1542765652",
                             thumbnailUrl: "https://is3-ssl.mzstatic.com/image/thumb/Purple114/v4/78/9b/be/789bbefa-d3eb-a877-cea2-68f7be26601d/AppIcon-1x_U007emarketing-0-7-0-sRGB-85-220.png/540x540bb.jpg",
                             instagram: "https://www.instagram.com/fatsandwichgames/"
-                            ),
+                    ),
                 ],
             activeProjectId: selected
         )

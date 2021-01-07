@@ -25,7 +25,7 @@ struct ProjectListView: View {
                         TapGesture(action: {
                             coordinator.performAction(.goTo("game/\(project.id)"))
                         }) {
-                            ProjectView(project: project)
+                            ProjectView(project: project, isActive: activeProjectId == project.id)
                         }
                     }
                 }

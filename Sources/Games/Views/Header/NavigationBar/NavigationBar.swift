@@ -17,11 +17,14 @@ struct NavigationBar: View {
             }) {
                 Text("Fat Sandwich Games")
                     .padding(.all, 8)
-                    .border(Color.white, width: 1)
+                    .padding(.leading, 8)
             }
             Spacer()
                 .frame(minWidth: 400)
+            SocialMediaButton(link: "https://www.facebook.com/fatsandwichgames/", type: .facebook)
+            SocialMediaButton(link: "https://www.instagram.com/fatsandwichgames/", type: .instagram)
         }
+        .border(Color.white, width: 1)
         .padding(.top, 12)
     }
 }
