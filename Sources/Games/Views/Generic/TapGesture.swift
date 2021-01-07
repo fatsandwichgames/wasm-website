@@ -16,16 +16,18 @@ struct TapGesture<Content: View>: View {
     var closure: () -> Content
     
     var body: some View {
-        closure()
-            ._domRef($object)
-            .onAppear {
-                onTap = JSClosure { _ in
-                    action()
+        AnyView(HTML("div", ["onmouseover":"", "style": "cursor: pointer"]) {
+            closure()
+                ._domRef($object)
+                .onAppear {
+                    onTap = JSClosure { _ in
+                        action()
+                    }
+                    _ = object?.addEventListener!("click", onTap)
+                }.onDisappear {
+                    _ = object?.removeEventListener!("click", onTap)
+                    onTap?.release()
                 }
-                _ = object?.addEventListener!("click", onTap)
-            }.onDisappear {
-                _ = object?.removeEventListener!("click", onTap)
-                onTap?.release()
-            }
+        })
     }
 }
