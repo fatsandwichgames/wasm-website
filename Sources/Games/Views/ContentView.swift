@@ -134,7 +134,7 @@ extension ContentView {
                         Sounds easy? Oh buoy! Download today and try climb the leaderboard - be the best bobble fisher on iOS!
                         """,
                             appStoreUrl: "https://apps.apple.com/app/ho-ho-go/id1547566845",
-                            thumbnailUrl: "https://is3-ssl.mzstatic.com/image/thumb/Purple114/v4/a9/3c/d0/a93cd0d3-efb7-067b-5ce8-af231b0608c7/AppIcon-1x_U007emarketing-0-7-0-sRGB-85-220.png/540x540bb.jpg",
+                            thumbnailUrl: "https://is3-ssl.mzstatic.com/image/thumb/Purple124/v4/a9/3c/d0/a93cd0d3-efb7-067b-5ce8-af231b0608c7/AppIcon-1x_U007emarketing-0-7-0-sRGB-85-220.png/540x540bb.jpg",
                             instagram: "https://www.instagram.com/fatsandwichgames/"
                     ),
                     Project(id: "id1542765652",
