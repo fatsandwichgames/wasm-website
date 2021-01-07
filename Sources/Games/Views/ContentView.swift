@@ -109,13 +109,13 @@ extension ContentView {
                     Project(id: "id1510216500",
                             name: "Little Wars",
                             description: """
-                        Play online with a friend or random 2-5 players as you attempt to hold your ground.
-
                         BATTLE. WIN. BATTLE.
 
-                        It’s simple! The more you battle and win, the higher you jump up the leaderboard and the more coins you earn! Grow your strength, unlock armour, weapons, hair and many more! Be the top warrior with the best, customised character.
-
-                        Are you ready for Little Wars with Bigger Battles?
+                        Get ready for Little Wars, the ultimate single or multiplayer iOS battle game.
+                        Hold your ground, defend your land, and battle to WIN! The more victories, the higher you climb on the leader board and the more coin you earn.
+                        Grow your strength, unlock insane armour, weapons, and even hair!
+                        Are you prepared to fight to become the top warrior, with the BEST, customised character?
+                        Little Wars with Bigger Battles, download NOW!
                         """,
                             appStoreUrl: "https://apps.apple.com/app/little-wars-with-big-battles/id1510216500",
                             thumbnailUrl: "https://is2-ssl.mzstatic.com/image/thumb/Purple124/v4/30/83/51/30835110-a35c-d93c-4aeb-38a402328fa5/AppIcon-1x_U007emarketing-0-7-0-sRGB-85-220.png/540x540bb.jpg",
@@ -127,25 +127,22 @@ extension ContentView {
                     Project(id: "id1547566845",
                             name: "Bobble Fish",
                             description: """
-                        Bobble Fish is an iOS mobile game.
-                        The game is a side-scroller where the player controls a fish, attempting to guide character between columns of green underwater pipes without hitting them.
-                        
-                        In case you haven’t had the chance to play it yet, Bobble Fish is a touch-based game highly inspired by Flappy Bird.
-                        That has extremely simple game mechanics and aesthetics.
-                        Its gameplay revolves around a single mechanic of tapping on the screen to keep it in the water and avoid obstacles through openings in them without hitting them.
-                        Passing each pair of obstacles gets you one point.
+                        BE PREPARED!
+
+                        This is not your average iOS mobile game, it’s insanely addictive so download at your own risk!
+                        The objective? Simple! Sea’s the day and swim your way through a maze of underwater pipes, but be careful not to touch them in the process! For every pipe you pass, you earn a point.
+                        Sounds easy? Oh buoy! Download today and try climb the leaderboard - be the best bobble fisher on iOS!
                         """,
                             appStoreUrl: "https://apps.apple.com/app/ho-ho-go/id1547566845",
-                            thumbnailUrl: "https://is3-ssl.mzstatic.com/image/thumb/Purple114/v4/..................../AppIcon-1x_U007emarketing-0-7-0-sRGB-85-220.png/540x540bb.jpg",
+                            thumbnailUrl: "https://is3-ssl.mzstatic.com/image/thumb/Purple114/v4/a9/3c/d0/a93cd0d3-efb7-067b-5ce8-af231b0608c7/AppIcon-1x_U007emarketing-0-7-0-sRGB-85-220.png/540x540bb.jpg",
                             instagram: "https://www.instagram.com/fatsandwichgames/"
                     ),
                     Project(id: "id1542765652",
                             name: "Ho Ho Go",
                             description: """
-                        Help Santa and his friend to deliver this year presents!
-
-                        Merry Christmas! and Happy New Year!
-                        I wish you all the best!
+                        Ho ho ho, it’s Christmas time all year round with this fun and festive single player iOS game! Sleigh-what?!
+                        You’ll mistle-totally love helping Santa deliver his presents, but oh snow - make sure to avoid those pesky chimneys! For every chimney you pass, you earn a point.
+                        Enjoy this festive game and keep the holiday cheer going! Download now!
                         """,
                             appStoreUrl: "https://apps.apple.com/app/ho-ho-go/id1542765652",
                             thumbnailUrl: "https://is3-ssl.mzstatic.com/image/thumb/Purple114/v4/78/9b/be/789bbefa-d3eb-a877-cea2-68f7be26601d/AppIcon-1x_U007emarketing-0-7-0-sRGB-85-220.png/540x540bb.jpg",
