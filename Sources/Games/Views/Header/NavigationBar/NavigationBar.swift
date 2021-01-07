@@ -22,6 +22,7 @@ struct NavigationBar: View {
             Spacer()
                 .frame(minWidth: 400)
             SocialMediaButton(link: "https://www.facebook.com/fatsandwichgames/", type: .facebook)
+            SocialMediaButton(link: "https://twitter.com/FatSandwichGame/", type: .twitter)
             SocialMediaButton(link: "https://www.instagram.com/fatsandwichgames/", type: .instagram)
         }
         .border(Color.white, width: 1)
