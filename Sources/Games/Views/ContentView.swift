@@ -121,7 +121,7 @@ extension ContentView {
                             thumbnailUrl: "https://is2-ssl.mzstatic.com/image/thumb/Purple124/v4/30/83/51/30835110-a35c-d93c-4aeb-38a402328fa5/AppIcon-1x_U007emarketing-0-7-0-sRGB-85-220.png/540x540bb.jpg",
                             youtube: "https://www.youtube.com/embed/zB6TeBg0t2Q",
                             facebook: "https://www.facebook.com/littlewarsapp",
-                            instagram: "https://www.instagram.com/littlewars.app",
+                            instagram: "https://www.instagram.com/littlewarsapp",
                             twitter: "https://twitter.com/littlewars1"
                     ),
                     Project(id: "id1547566845",
